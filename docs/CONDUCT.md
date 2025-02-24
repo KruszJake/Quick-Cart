@@ -125,6 +125,45 @@ For answers to common questions about this code of conduct, see the FAQ at
 [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at
 [https://www.contributor-covenant.org/translations][translations].
 
+
+
+##Decision
+** We'll use the majority rule to make decision on our ideas and the best way to proceed.
+
+
+##Attendance
+** Meet ups during class times and additiionaly meet-ups when necessary.
+
+##Assignmemnts
+**Just split the work evenly amongst ourselves and make adjustments when necessary.
+
+
+##Participation
+** We require equal particiation form all members and no slouching would be tolerated.
+
+##Meeting Times & Locations
+** Working on selecting the best times.
+
+##Agenda/Notes
+** Will take notes when necessary
+
+##Promptness
+** Strive for punctuality and working to complete the project
+
+##Conversational Courtesies
+**Be respectful and polite.
+
+##Enforcement/ Feedback
+**Will ensure that rules are followed and tolerated.
+
+
+
+
+
+
+
+
+
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
 [Mozilla CoC]: https://github.com/mozilla/diversity
