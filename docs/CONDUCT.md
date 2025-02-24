@@ -127,6 +127,9 @@ For answers to common questions about this code of conduct, see the FAQ at
 
 
 
+
+
+
 ##Decision
 ** We'll use the majority rule to make decision on our ideas and the best way to proceed.
 
