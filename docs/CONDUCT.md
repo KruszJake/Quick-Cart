@@ -177,3 +177,7 @@ For answers to common questions about this code of conduct, see the FAQ at
 
 ![Nick Signature](https://github.com/user-attachments/assets/d7538719-1926-46b7-ae74-3b8fc363a8cd)
 
+
+![Ray's signature](https://github.com/user-attachments/assets/4313b70d-0f52-422a-a962-4e9c07286c93)
+
+
