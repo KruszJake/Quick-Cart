@@ -173,5 +173,6 @@ For answers to common questions about this code of conduct, see the FAQ at
 [FAQ]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
 
+![Jake Signature](https://github.com/user-attachments/assets/9318605c-56c8-45a5-946e-6cc831ad6f45)
 
-![Jake  Signature](https://drive.google.com/file/d/1OVRl-1st1y2QFbZ2dj0Ne033Cq0OI0Ny/view?usp=sharing)
+
