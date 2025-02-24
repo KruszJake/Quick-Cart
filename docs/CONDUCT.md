@@ -175,4 +175,5 @@ For answers to common questions about this code of conduct, see the FAQ at
 
 ![Jake Signature](https://github.com/user-attachments/assets/9318605c-56c8-45a5-946e-6cc831ad6f45)
 
+![Nick Signature](https://github.com/user-attachments/assets/d7538719-1926-46b7-ae74-3b8fc363a8cd)
 
