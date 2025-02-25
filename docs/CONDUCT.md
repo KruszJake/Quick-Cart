@@ -180,4 +180,6 @@ For answers to common questions about this code of conduct, see the FAQ at
 
 ![Ray's signature](https://github.com/user-attachments/assets/4313b70d-0f52-422a-a962-4e9c07286c93)
 
+![Alejandro signature](https://github.com/user-attachments/assets/2f2ee747-b047-4772-9acc-efefdeca1f5c)
+
 
