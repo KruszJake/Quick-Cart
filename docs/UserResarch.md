@@ -19,6 +19,10 @@ Observation 4:
 -The bar chart indicates that 53.8% of users find sale alerts useful, while 46.2% prefer budget warnings, 38.5% want reminders for expiring pantry items, and 30.8% do not want notifications at all.
 =Implement a notification feature that prioritizes sale alerts on frequently bought items, with optional toggles for other types of notifications to accommodate different preferences.
 
+Observation 5: 
+- A large percentage of respondants usually grocery shop one time per week.
+- The bar chart indicates 42.3% of respondants grocery shop once per week, whilst 50% grocery shop less often.
+- Set reminders for people to grocery shop according to their average shopping frequency.
 
 
 
