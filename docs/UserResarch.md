@@ -9,13 +9,10 @@ Observation 2:
 -Make a grocery shopping assistant feature that helps users track their purchases and suggest lists based on previous shopping habits.
 
 Observation 3: 
- Users face key challenges like forgetting items, overspending , and finding the best prices. Additionally, respondents rely on memory-based shopping, while some use digital notes, showing a gap in structured grocery planning.
-
-
-Since most users face these challenges; we can implement features that:
-1. Suggests frequently bought items
-2. Allow users to set a spending limit, and the app alerts them if they are overspending
-3. Users get alerts when staple items are running low.
+-Users face key challenges like forgetting items, overspending , and finding the best prices. Additionally, respondents rely on memory-based shopping, while some use digital notes, showing a gap in structured grocery planning.Since most users face these challenges; we can implement features that:
+-Suggests frequently bought items
+-Allow users to set a spending limit, and the app alerts them if they are overspending
+-Users get alerts when staple items are running low.
 
 Observation 4: 
 -A majority of respondents 53.8% prefer receiving notifications about sales on frequently bought items.
