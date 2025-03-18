@@ -1,2 +1,2 @@
-
-https://docs.google.com/presentation/d/1r3DGvKN3EY8emYHQVIO6e5MKfWxVXdi6E2V3QQohbbk/edit?usp=sharing
+You csn viewouw metrics template here: 
+ https://docs.google.com/presentation/d/1r3DGvKN3EY8emYHQVIO6e5MKfWxVXdi6E2V3QQohbbk/edit?usp=sharing
