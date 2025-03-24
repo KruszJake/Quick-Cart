@@ -3,6 +3,6 @@ You can view our metrics template here:
 
 - Collecting DAU with Firebase User authentication metrics
 - measuring CTR through a google analytics event on some of the buttons in our app
-- Collecting download rate and account creation rate throuhg firebase performance monitoring
+- Collecting account creation (Adoption) rate throuhg firebase performance monitoring
 - Using built in app features to track the retention rate of our users through firebase analytics.
-
+- Track meals generated through our Gemini API usage data
