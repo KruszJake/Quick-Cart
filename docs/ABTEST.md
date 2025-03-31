@@ -19,3 +19,30 @@ Variations:
 Control Group (A): Default green background
 Variant Group (B): Black background
 Mockups of both designs will be included for comparison. The final variation will be selected based on engagement and user feedback data.
+
+
+2. A/B Test Name:
+Navigation: Scrolling Between Screens vs. Bottom Navbar
+User Story Number: US3
+Metrics:
+Engagement: Time spent on the app per session
+Adoption: Number of screens viewed per session
+Satisfaction: User feedback on ease of navigation
+
+Hypothesis:
+We believe that replacing the bottom navigation bar with scrolling between screens will reduce friction and result in a more fluid user experience, as users may prefer swiping rather than using a fixed navigation bar.
+Problem & Impact:
+Currently, the bottom navigation bar may feel restrictive or redundant when switching between screens. We believe that enabling scrolling between screens can streamline navigation and make the app feel more interactive. This could lead to higher user engagement and satisfaction, as users may enjoy the more fluid navigation.
+Experiment Setup:
+Audience: 50% will use the bottom navigation bar, and 50% will experience scrolling between screens.
+Tracking:
+screen_switches → Tracks how many times users switch between screens
+time_spent → Measures how long users spend on the app
+user_feedback → Collects user feedback on navigation ease
+
+Variations:
+Control: Users navigate using the bottom navigation bar (with fixed icons for Home, Meals, Settings, etc.).
+Variation: Users scroll between screens with horizontal swiping (or vertical scrolling) to switch between sections, without a bottom navigation bar.
+
+Expected Outcome:
+If scrolling between screens leads to better engagement and higher satisfaction compared to the fixed bottom navigation bar, we will consider switching to this style for improved user experience.
