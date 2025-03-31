@@ -46,3 +46,20 @@ Variation: Users scroll between screens with horizontal swiping (or vertical scr
 
 Expected Outcome:
 If scrolling between screens leads to better engagement and higher satisfaction compared to the fixed bottom navigation bar, we will consider switching to this style for improved user experience.
+
+3.A/B Test Name: Notifications Impact on User Retention & DAU
+**Metrics:**
+Daily Active Users (DAU) / User retention rate
+
+**Hypothesis:**
+We believe that sending notifications will boost user retention and increase the number of daily active users compared to not sending any notifications.
+
+**Experiment Setup:**
+Audience: Randomly assign 50% of users to receive notifications (Variation) and 50% to receive no notifications (Control).
+**Tracking:** 
+
+DAU: Measures the number of users active each day 
+Retention Rate: Tracks how many users return over a set period
+
+**Expected Outcome:**
+If users receiving notifications show higher retention and DAU than those not receiving notifications, it will indicate that notifications positively influence user engagement.
