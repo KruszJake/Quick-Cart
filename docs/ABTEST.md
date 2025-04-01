@@ -63,3 +63,40 @@ Retention Rate: Tracks how many users return over a set period
 
 **Expected Outcome:**
 If users receiving notifications show higher retention and DAU than those not receiving notifications, it will indicate that notifications positively influence user engagement.
+
+
+4. A/B Test Name: Profile Picture Upload vs Default Avatar
+User Story Number: US5
+Metrics:
+
+Adoption: Percentage of users who complete their profile setup
+
+Engagement: Number of profile visits per session
+
+Satisfaction: User feedback on customization and personalization experience
+
+Hypothesis:
+We believe that allowing users to upload their own profile picture, instead of using a default avatar, will increase adoption and engagement by making the app feel more personalized. Custom profile pictures help users feel more connected to their account, potentially leading to more interaction with profile features.
+
+Problem & Impact:
+Currently, all users are assigned a default avatar during onboarding, which may make the app feel generic or impersonal. If users are given the option to upload a photo, we believe they’ll be more likely to complete their profile setup and revisit or interact with profile-related features. This could improve overall user engagement and satisfaction with the app’s personalization features.
+
+Experiment Setup:
+Audience: 50% of users will remain with the default avatar (Control group), and 50% will be given the ability to upload a custom profile image during onboarding (Variation group).
+
+Tracking:
+
+profile_completed: Tracks whether the user finishes setting up their profile
+
+profile_views: Tracks how many times users open the profile screen
+
+user_feedback: Collects user feedback on the customization options
+
+Variations:
+
+Control: Users are only provided with a default avatar
+
+Variation: Users are given the option to upload and crop a profile image during the setup process
+
+Expected Outcome:
+If users in the variation group show higher profile completion rates and increased visits to their profile screen, and provide more positive feedback, this would suggest that customizable avatars lead to a better user experience. If successful, we’ll roll out the image upload feature to all users and consider further customization options.
