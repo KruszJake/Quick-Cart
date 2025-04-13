@@ -30,7 +30,9 @@ void main() async {
   testWidgets('Login Test', (WidgetTester tester) async {
     _overrideOnError();
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(MyApp(
+      entryPage: LogInWidget(),
+    ));
     await GoogleFonts.pendingFonts();
 
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
