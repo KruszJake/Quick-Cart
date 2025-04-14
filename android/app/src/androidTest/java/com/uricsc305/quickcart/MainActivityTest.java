@@ -1,4 +1,4 @@
-package com.mycompany.quickcart;
+package com.uricsc305.quickcart;
 
 import androidx.test.rule.ActivityTestRule;
 import dev.flutter.plugins.integration_test.FlutterTestRunner;

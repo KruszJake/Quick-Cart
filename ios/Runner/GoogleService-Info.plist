@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.quickcart</string>
+	<string>com.uricsc305.quickcart</string>
 	<key>PROJECT_ID</key>
 	<string>quick-cart-1b41e</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:441545590708:ios:2488f119f7b628fbe394e1</string>
+	<string>1:441545590708:ios:c5ac27a5a7d3155ae394e1</string>
 </dict>
 </plist>

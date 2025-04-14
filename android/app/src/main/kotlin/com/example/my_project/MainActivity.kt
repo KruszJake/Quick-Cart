@@ -1,4 +1,4 @@
-package com.mycompany.quickcart
+package com.uricsc305.quickcart
 
 import io.flutter.embedding.android.FlutterActivity
 

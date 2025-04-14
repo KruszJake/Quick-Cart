@@ -151,6 +151,7 @@ class _LogInWidgetState extends State<LogInWidget>
                                   Container(
                                     width: double.infinity,
                                     child: TextFormField(
+                                      key: ValueKey('LogIn-email_u57v'),
                                       controller:
                                           _model.logInEmailTextController,
                                       focusNode: _model.logInEmailFocusNode,
@@ -260,6 +261,7 @@ class _LogInWidgetState extends State<LogInWidget>
                                   Container(
                                     width: double.infinity,
                                     child: TextFormField(
+                                      key: ValueKey('LogIn-Password_njd6'),
                                       controller:
                                           _model.logInPasswordTextController,
                                       focusNode: _model.logInPasswordFocusNode,
@@ -362,6 +364,7 @@ class _LogInWidgetState extends State<LogInWidget>
                                   Padding(
                                     padding: EdgeInsets.all(24.0),
                                     child: FFButtonWidget(
+                                      key: ValueKey('Button_u6ae'),
                                       onPressed: () async {
                                         logFirebaseEvent(
                                             'LOG_IN_PAGE_LOG_IN_BTN_ON_TAP');
