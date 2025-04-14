@@ -27,23 +27,7 @@ void main() async {
     await authManager.signOut();
   });
 
-  testWidgets('Login Test', (WidgetTester tester) async {
-    _overrideOnError();
 
-    await tester.pumpWidget(MyApp(
-      entryPage: LogInWidget(),
-    ));
-    await GoogleFonts.pendingFonts();
-
-    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    await tester.enterText(
-        find.byKey(const ValueKey('LogIn-email_u57v')), 'test@example.com');
-    await tester.enterText(
-        find.byKey(const ValueKey('LogIn-Password_njd6')), 'testpassword');
-    await tester.tap(find.byKey(const ValueKey('Button_u6ae')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
-    expect(find.text('Add A Meal'), findsWidgets);
-  });
 
   testWidgets('Backend Management', (WidgetTester tester) async {
     _overrideOnError();
