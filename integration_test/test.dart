@@ -44,6 +44,20 @@ void main() async {
     await tester.pumpAndSettle(const Duration(milliseconds: 5000));
     expect(find.text('Add A Meal'), findsWidgets);
   });
+
+  testWidgets('Backend Management', (WidgetTester tester) async {
+    _overrideOnError();
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'raymond.oa@uri.edu', password: 'Raybrian77!');
+    await tester.pumpWidget(const MyApp());
+    await GoogleFonts.pendingFonts();
+
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
+    await tester.enterText(find.byKey(const ValueKey('mealName_grro')), 'Rice');
+    await tester.tap(find.byKey(const ValueKey('addMeal_puij')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
+    expect(find.text('Your Meals'), findsWidgets);
+  });
 }
 
 // There are certain types of errors that can happen during tests but

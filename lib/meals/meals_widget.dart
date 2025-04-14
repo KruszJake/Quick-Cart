@@ -130,6 +130,7 @@ class _MealsWidgetState extends State<MealsWidget> {
                                         ),
                                   ),
                                   TextFormField(
+                                    key: ValueKey('mealName_grro'),
                                     controller: _model.mealNameTextController,
                                     focusNode: _model.mealNameFocusNode,
                                     autofocus: false,
@@ -376,6 +377,7 @@ class _MealsWidgetState extends State<MealsWidget> {
                                         .asValidator(context),
                                   ),
                                   FFButtonWidget(
+                                    key: ValueKey('addMeal_puij'),
                                     onPressed: () async {
                                       logFirebaseEvent(
                                           'MEALS_PAGE_addMeal_ON_TAP');
