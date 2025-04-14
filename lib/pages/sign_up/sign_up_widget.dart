@@ -148,6 +148,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                     Container(
                                       width: double.infinity,
                                       child: TextFormField(
+                                        key: ValueKey('SignUp-Email_m7rc'),
                                         controller:
                                             _model.signUpEmailTextController,
                                         focusNode: _model.signUpEmailFocusNode,
@@ -267,6 +268,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                     Container(
                                       width: double.infinity,
                                       child: TextFormField(
+                                        key: ValueKey('SignUp-Password_qckj'),
                                         controller:
                                             _model.signUpPasswordTextController,
                                         focusNode:
@@ -381,6 +383,8 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                     Container(
                                       width: double.infinity,
                                       child: TextFormField(
+                                        key: ValueKey(
+                                            'SignUp-ConfirmPassword_7mys'),
                                         controller: _model
                                             .signUpConfirmPasswordTextController,
                                         focusNode: _model
@@ -503,6 +507,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
                   ),
                 ),
                 FFButtonWidget(
+                  key: ValueKey('Button_zrj7'),
                   onPressed: () async {
                     logFirebaseEvent('SIGN_UP_PAGE_SIGN_UP_BTN_ON_TAP');
                     logFirebaseEvent('Button_validate_form');

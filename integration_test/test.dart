@@ -27,8 +27,6 @@ void main() async {
     await authManager.signOut();
   });
 
-
-
   testWidgets('Backend Management', (WidgetTester tester) async {
     _overrideOnError();
     await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -41,6 +39,39 @@ void main() async {
     await tester.tap(find.byKey(const ValueKey('addMeal_puij')));
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
     expect(find.text('Your Meals'), findsWidgets);
+  });
+
+  testWidgets('Account Creation', (WidgetTester tester) async {
+    _overrideOnError();
+
+    await tester.pumpWidget(MyApp(
+      entryPage: HomePageWidget(),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 5000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 100000),
+    );
+    await tester.tap(find.byKey(const ValueKey('Button_g5od')));
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 5000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 100000),
+    );
+    await tester.enterText(
+        find.byKey(const ValueKey('SignUp-Email_m7rc')), 'jake@uri.edu');
+    await tester.enterText(
+        find.byKey(const ValueKey('SignUp-Password_qckj')), 'password');
+    await tester.enterText(
+        find.byKey(const ValueKey('SignUp-ConfirmPassword_7mys')), 'password');
+    await tester.tap(find.byKey(const ValueKey('Button_zrj7')));
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 5000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 100000),
+    );
   });
 }
 

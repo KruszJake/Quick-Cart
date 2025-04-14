@@ -94,6 +94,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                 ),
                 FFButtonWidget(
+                  key: ValueKey('Button_g5od'),
                   onPressed: () async {
                     logFirebaseEvent('HOME_PAGE_PAGE_SIGN_UP_BTN_ON_TAP');
                     logFirebaseEvent('Button_navigate_to');
