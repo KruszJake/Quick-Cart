@@ -114,7 +114,8 @@ void main() async {
 
   testWidgets('AI meal ', (WidgetTester tester) async {
     _overrideOnError();
-
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'alejandro.gutierrez1176@gmail.com', password: 'alejandro11');
     await tester.pumpWidget(MyApp(
       entryPage: AIMealPageWidget(),
     ));
