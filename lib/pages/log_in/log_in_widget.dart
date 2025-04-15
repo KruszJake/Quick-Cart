@@ -106,7 +106,7 @@ class _LogInWidgetState extends State<LogInWidget>
                   key: _model.formKey,
                   autovalidateMode: AutovalidateMode.disabled,
                   child: Container(
-                    height: 409.7,
+                    height: 420.58,
                     decoration: BoxDecoration(),
                     child: Column(
                       children: [
@@ -359,6 +359,64 @@ class _LogInWidgetState extends State<LogInWidget>
                                       validator: _model
                                           .logInPasswordTextControllerValidator
                                           .asValidator(context),
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        logFirebaseEvent(
+                                            'LOG_IN_PAGE_Text_tayrc3ha_ON_TAP');
+                                        logFirebaseEvent('Text_auth');
+                                        if (_model.logInEmailTextController.text
+                                            .isEmpty) {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Email required!',
+                                              ),
+                                            ),
+                                          );
+                                          return;
+                                        }
+                                        await authManager.resetPassword(
+                                          email: _model
+                                              .logInEmailTextController.text,
+                                          context: context,
+                                        );
+                                        logFirebaseEvent('Text_alert_dialog');
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              content: Text(
+                                                  'A password reset link has been sent to your email address.'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      },
+                                      child: Text(
+                                        'Forgot Password?',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
                                     ),
                                   ),
                                   Padding(

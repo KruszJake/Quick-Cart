@@ -12,6 +12,7 @@ import 'package:quick_cart/index.dart';
 import 'package:quick_cart/main.dart';
 import 'package:quick_cart/flutter_flow/flutter_flow_util.dart';
 
+import 'package:provider/provider.dart';
 import 'package:quick_cart/backend/firebase/firebase_config.dart';
 import 'package:quick_cart/auth/firebase_auth/auth_util.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -25,13 +26,19 @@ void main() async {
 
   setUp(() async {
     await authManager.signOut();
+    FFAppState.reset();
+    final appState = FFAppState();
+    await appState.initializePersistedState();
   });
 
   testWidgets('Backend Management', (WidgetTester tester) async {
     _overrideOnError();
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: 'raymond.oa@uri.edu', password: 'Raybrian77!');
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: const MyApp(),
+    ));
     await GoogleFonts.pendingFonts();
 
     await tester.pumpAndSettle(const Duration(milliseconds: 3000));
@@ -44,8 +51,11 @@ void main() async {
   testWidgets('Account Creation', (WidgetTester tester) async {
     _overrideOnError();
 
-    await tester.pumpWidget(MyApp(
-      entryPage: HomePageWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: HomePageWidget(),
+      ),
     ));
     await GoogleFonts.pendingFonts();
 
@@ -77,8 +87,11 @@ void main() async {
   testWidgets('Login', (WidgetTester tester) async {
     _overrideOnError();
 
-    await tester.pumpWidget(MyApp(
-      entryPage: LogInWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: LogInWidget(),
+      ),
     ));
     await GoogleFonts.pendingFonts();
 
@@ -116,8 +129,11 @@ void main() async {
     _overrideOnError();
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: 'alejandro.gutierrez1176@gmail.com', password: 'alejandro11');
-    await tester.pumpWidget(MyApp(
-      entryPage: AIMealPageWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: AIMealPageWidget(),
+      ),
     ));
     await GoogleFonts.pendingFonts();
 

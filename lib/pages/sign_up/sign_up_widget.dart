@@ -496,6 +496,65 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                             .asValidator(context),
                                       ),
                                     ),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          logFirebaseEvent(
+                                              'SIGN_UP_PAGE_Text_s6fvn3yd_ON_TAP');
+                                          logFirebaseEvent('Text_auth');
+                                          if (_model.signUpEmailTextController
+                                              .text.isEmpty) {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Email required!',
+                                                ),
+                                              ),
+                                            );
+                                            return;
+                                          }
+                                          await authManager.resetPassword(
+                                            email: _model
+                                                .signUpEmailTextController.text,
+                                            context: context,
+                                          );
+                                          logFirebaseEvent('Text_alert_dialog');
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                content: Text(
+                                                    'A reset link has been sent to your email. Please check your inbox.'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        },
+                                        child: Text(
+                                          'Forgot Password?',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
                                   ].divide(SizedBox(height: 12.0)),
                                 ),
                               ),

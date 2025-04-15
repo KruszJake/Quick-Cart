@@ -1,3 +1,4 @@
+import 'package:provider/provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +19,15 @@ void main() async {
 
   await initFirebase();
 
+  final appState = FFAppState(); // Initialize FFAppState
+  await appState.initializePersistedState();
+
   await initializeFirebaseRemoteConfig();
 
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -143,9 +150,9 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'meals': MealsWidget(),
-      'Profile': ProfileWidget(),
-      'AIMealPage': AIMealPageWidget(),
       'GroceryList': GroceryListWidget(),
+      'AIMealPage': AIMealPageWidget(),
+      'Profile': ProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -174,9 +181,10 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person,
+              Icons.list,
+              size: 24.0,
             ),
-            label: 'Profile',
+            label: 'Groccey List',
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -188,10 +196,9 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.list,
-              size: 24.0,
+              Icons.person,
             ),
-            label: 'Groccey List',
+            label: 'Profile',
             tooltip: '',
           )
         ],

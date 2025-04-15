@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'meals_widget.dart' show MealsWidget;
@@ -7,6 +8,16 @@ class MealsModel extends FlutterFlowModel<MealsWidget> {
   ///  Local state fields for this page.
 
   int? clickCount = 0;
+
+  List<MealsRecord> filteredMeals = [];
+  void addToFilteredMeals(MealsRecord item) => filteredMeals.add(item);
+  void removeFromFilteredMeals(MealsRecord item) => filteredMeals.remove(item);
+  void removeAtIndexFromFilteredMeals(int index) =>
+      filteredMeals.removeAt(index);
+  void insertAtIndexInFilteredMeals(int index, MealsRecord item) =>
+      filteredMeals.insert(index, item);
+  void updateFilteredMealsAtIndex(int index, Function(MealsRecord) updateFn) =>
+      filteredMeals[index] = updateFn(filteredMeals[index]);
 
   ///  State fields for stateful widgets in this page.
 
@@ -45,6 +56,10 @@ class MealsModel extends FlutterFlowModel<MealsWidget> {
   FocusNode? ingredientsFocusNode;
   TextEditingController? ingredientsTextController;
   String? Function(BuildContext, String?)? ingredientsTextControllerValidator;
+  // State field(s) for Search widget.
+  FocusNode? searchFocusNode;
+  TextEditingController? searchTextController;
+  String? Function(BuildContext, String?)? searchTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
@@ -62,5 +77,8 @@ class MealsModel extends FlutterFlowModel<MealsWidget> {
 
     ingredientsFocusNode?.dispose();
     ingredientsTextController?.dispose();
+
+    searchFocusNode?.dispose();
+    searchTextController?.dispose();
   }
 }
