@@ -551,6 +551,37 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           borderRadius: BorderRadius.circular(24.0),
                         ),
                       ),
+                      FFButtonWidget(
+                        onPressed: () async {
+                          logFirebaseEvent('PROFILE_PAGE_SIGNOUT_BTN_ON_TAP');
+                          logFirebaseEvent('Button_navigate_to');
+
+                          context.pushNamed(HomePageWidget.routeName);
+                        },
+                        text: 'Signout',
+                        options: FFButtonOptions(
+                          width: double.infinity,
+                          height: 55.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .override(
+                                fontFamily: 'Inter',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                              ),
+                          elevation: 0.0,
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(24.0),
+                        ),
+                      ),
                     ].divide(SizedBox(height: 16.0)),
                   ),
                 ),

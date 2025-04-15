@@ -111,6 +111,25 @@ void main() async {
     );
     expect(find.text('Meal'), findsWidgets);
   });
+
+  testWidgets('AI meal ', (WidgetTester tester) async {
+    _overrideOnError();
+
+    await tester.pumpWidget(MyApp(
+      entryPage: AIMealPageWidget(),
+    ));
+    await GoogleFonts.pendingFonts();
+
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.tap(find.byKey(const ValueKey('Button_5zzo')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.enterText(find.byKey(const ValueKey('enterMeal_26n2')),
+        'make a meal for breakfast');
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.tap(find.byKey(const ValueKey('IconButton_e0ot')));
+    await tester.pumpAndSettle(const Duration(milliseconds: 5000));
+    await tester.tap(find.byIcon(Icons.add_box));
+  });
 }
 
 // There are certain types of errors that can happen during tests but

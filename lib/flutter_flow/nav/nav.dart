@@ -131,11 +131,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
                 ),
         ),
         FFRoute(
-          name: GrocceyListWidget.routeName,
-          path: GrocceyListWidget.routePath,
+          name: GroceryListWidget.routeName,
+          path: GroceryListWidget.routePath,
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'grocceyList')
-              : GrocceyListWidget(),
+              ? NavBarPage(initialPage: 'GroceryList')
+              : GroceryListWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

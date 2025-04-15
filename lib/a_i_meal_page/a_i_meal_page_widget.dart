@@ -30,8 +30,8 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
     _model = createModel(context, () => AIMealPageModel());
 
     logFirebaseEvent('screen_view', parameters: {'screen_name': 'AIMealPage'});
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.enterMealTextController ??= TextEditingController();
+    _model.enterMealFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -115,8 +115,9 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                     ),
                               ),
                               TextFormField(
-                                controller: _model.textController,
-                                focusNode: _model.textFieldFocusNode,
+                                key: ValueKey('enterMeal_26n2'),
+                                controller: _model.enterMealTextController,
+                                focusNode: _model.enterMealFocusNode,
                                 autofocus: false,
                                 textCapitalization:
                                     TextCapitalization.sentences,
@@ -172,49 +173,80 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                 minLines: 1,
                                 cursorColor:
                                     FlutterFlowTheme.of(context).primary,
-                                validator: _model.textControllerValidator
+                                validator: _model
+                                    .enterMealTextControllerValidator
                                     .asValidator(context),
                               ),
                               FFButtonWidget(
+                                key: ValueKey('Button_5zzo'),
                                 onPressed: () async {
                                   logFirebaseEvent(
                                       'A_I_MEAL_PAGE_PAGE_GENERATE_BTN_ON_TAP');
-                                  logFirebaseEvent('Button_a_i_agent');
-                                  await callAiAgent(
-                                    context: context,
-                                    prompt: _model.textController.text,
-                                    threadId: currentUserUid,
-                                    agentCloudFunctionName: 'mealGenerator',
-                                    provider: 'GOOGLE',
-                                    agentJson:
-                                        "{\"status\":\"LIVE\",\"identifier\":{\"name\":\"mealGenerator\",\"key\":\"anbby\"},\"name\":\"mealGenerator\",\"description\":\"Takes an input message from a user on the type of meal they want generated and returns a meal with the name, calories, and ingredient list for the meal.\",\"aiModel\":{\"provider\":\"GOOGLE\",\"model\":\"gemini-1.5-pro\",\"parameters\":{\"temperature\":{\"inputValue\":1},\"maxTokens\":{\"inputValue\":8192},\"topP\":{\"inputValue\":0.95}},\"messages\":[{\"role\":\"SYSTEM\",\"text\":\"You are an ai meal generator. suggest meals based on the users input. Generate a meal suggestion in JSON format with the following keys:\\n\\nname (string) → The meal name\\n\\ntype (string) → Either 'Breakfast', 'Lunch', 'Dinner', or 'Snack'\\n\\ncalories (integer) → The calorie count\\n\\ningredients (string) → A comma-separated list of ingredients\\nReturn the response as valid JSON.\\\"\\n{\\n  \\\"name\\\": \\\"Grilled Chicken Salad\\\",\\n  \\\"type\\\": \\\"Lunch\\\",\\n  \\\"calories\\\": 350,\\n  \\\"ingredients\\\": \\\"Chicken, Lettuce, Tomato, Olive oil, Feta cheese\\\"\\n}\\n\\n\"},{\"role\":\"USER\",\"text\":\"Give me a suggestion for a salad for dinner.\"},{\"role\":\"ASSISTANT\",\"text\":\"{\\n  \\\"name\\\": \\\"Grilled Chicken Salad\\\",\\n  \\\"type\\\": \\\"Dinner\\\",\\n  \\\"calories\\\": 350,\\n  \\\"ingredients\\\": \\\"Chicken, Lettuce, Tomato, Olive oil, Feta cheese\\\"\\n}\\n\"}]},\"requestOptions\":{\"requestTypes\":[\"PLAINTEXT\"]},\"responseOptions\":{\"responseType\":\"JSON\"}}",
-                                    responseType: 'JSON',
-                                  ).then((generatedText) {
-                                    safeSetState(() =>
-                                        _model.aIResponse = generatedText);
-                                  });
+                                  if (_model.enterMealTextController.text !=
+                                      '') {
+                                    logFirebaseEvent('Button_a_i_agent');
+                                    await callAiAgent(
+                                      context: context,
+                                      prompt:
+                                          _model.enterMealTextController.text,
+                                      threadId: currentUserUid,
+                                      agentCloudFunctionName: 'mealGenerator',
+                                      provider: 'GOOGLE',
+                                      agentJson:
+                                          "{\"status\":\"LIVE\",\"identifier\":{\"name\":\"mealGenerator\",\"key\":\"anbby\"},\"name\":\"mealGenerator\",\"description\":\"Takes an input message from a user on the type of meal they want generated and returns a meal with the name, calories, and ingredient list for the meal.\",\"aiModel\":{\"provider\":\"GOOGLE\",\"model\":\"gemini-1.5-pro\",\"parameters\":{\"temperature\":{\"inputValue\":1},\"maxTokens\":{\"inputValue\":8192},\"topP\":{\"inputValue\":0.95}},\"messages\":[{\"role\":\"SYSTEM\",\"text\":\"You are an ai meal generator. suggest meals based on the users input. Generate a meal suggestion in JSON format with the following keys:\\n\\nname (string) → The meal name\\n\\ntype (string) → Either 'Breakfast', 'Lunch', 'Dinner', or 'Snack'\\n\\ncalories (integer) → The calorie count\\n\\ningredients (string) → A comma-separated list of ingredients\\nReturn the response as valid JSON.\\\"\\n{\\n  \\\"name\\\": \\\"Grilled Chicken Salad\\\",\\n  \\\"type\\\": \\\"Lunch\\\",\\n  \\\"calories\\\": 350,\\n  \\\"ingredients\\\": \\\"Chicken, Lettuce, Tomato, Olive oil, Feta cheese\\\"\\n}\\n\\n\"},{\"role\":\"USER\",\"text\":\"Give me a suggestion for a salad for dinner.\"},{\"role\":\"ASSISTANT\",\"text\":\"{\\n  \\\"name\\\": \\\"Grilled Chicken Salad\\\",\\n  \\\"type\\\": \\\"Dinner\\\",\\n  \\\"calories\\\": 350,\\n  \\\"ingredients\\\": \\\"Chicken, Lettuce, Tomato, Olive oil, Feta cheese\\\"\\n}\\n\"}]},\"requestOptions\":{\"requestTypes\":[\"PLAINTEXT\"]},\"responseOptions\":{\"responseType\":\"JSON\"}}",
+                                      responseType: 'JSON',
+                                    ).then((generatedText) {
+                                      safeSetState(() =>
+                                          _model.aIResponse = generatedText);
+                                    });
 
-                                  logFirebaseEvent('Button_update_page_state');
-                                  _model.mealResponse = _model.aIResponse;
-                                  safeSetState(() {});
-                                  logFirebaseEvent('Button_update_page_state');
-                                  _model.mealName = getJsonField(
-                                    _model.mealResponse,
-                                    r'''$.name''',
-                                  ).toString();
-                                  _model.mealCalories = getJsonField(
-                                    _model.aIResponse,
-                                    r'''$.calories''',
-                                  );
-                                  _model.mealIngredients = getJsonField(
-                                    _model.aIResponse,
-                                    r'''$.ingredients''',
-                                  ).toString();
-                                  _model.recipeType = getJsonField(
-                                    _model.aIResponse,
-                                    r'''$.type''',
-                                  ).toString();
-                                  safeSetState(() {});
+                                    logFirebaseEvent(
+                                        'Button_update_page_state');
+                                    _model.mealResponse = _model.aIResponse;
+                                    safeSetState(() {});
+                                    logFirebaseEvent(
+                                        'Button_update_page_state');
+                                    _model.mealName = getJsonField(
+                                      _model.mealResponse,
+                                      r'''$.name''',
+                                    ).toString();
+                                    _model.mealCalories = getJsonField(
+                                      _model.aIResponse,
+                                      r'''$.calories''',
+                                    );
+                                    _model.mealIngredients = getJsonField(
+                                      _model.aIResponse,
+                                      r'''$.ingredients''',
+                                    ).toString();
+                                    _model.recipeType = getJsonField(
+                                      _model.aIResponse,
+                                      r'''$.type''',
+                                    ).toString();
+                                    safeSetState(() {});
+                                  } else {
+                                    logFirebaseEvent('Button_show_snack_bar');
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Please Fill out Text Bar',
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        duration: Duration(milliseconds: 4000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondary,
+                                      ),
+                                    );
+                                  }
+
                                   logFirebaseEvent(
                                       'Button_google_analytics_event');
                                   logFirebaseEvent('meals_generated');
@@ -406,6 +438,7 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 40.0, 0.0, 0.0),
                                   child: FlutterFlowIconButton(
+                                    key: ValueKey('IconButton_e0ot'),
                                     borderRadius: 20.0,
                                     icon: Icon(
                                       Icons.add_circle,

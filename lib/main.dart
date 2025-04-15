@@ -145,7 +145,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'meals': MealsWidget(),
       'Profile': ProfileWidget(),
       'AIMealPage': AIMealPageWidget(),
-      'grocceyList': GrocceyListWidget(),
+      'GroceryList': GroceryListWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 

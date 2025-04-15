@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'groccey_list_widget.dart' show GrocceyListWidget;
+import 'grocery_list_widget.dart' show GroceryListWidget;
 import 'package:flutter/material.dart';
 
-class GrocceyListModel extends FlutterFlowModel<GrocceyListWidget> {
+class GroceryListModel extends FlutterFlowModel<GroceryListWidget> {
   ///  Local state fields for this page.
 
   List<DocumentReference> selectedMealRefs = [];

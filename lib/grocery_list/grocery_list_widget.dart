@@ -5,30 +5,30 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'groccey_list_model.dart';
-export 'groccey_list_model.dart';
+import 'grocery_list_model.dart';
+export 'grocery_list_model.dart';
 
-class GrocceyListWidget extends StatefulWidget {
-  const GrocceyListWidget({super.key});
+class GroceryListWidget extends StatefulWidget {
+  const GroceryListWidget({super.key});
 
-  static String routeName = 'grocceyList';
-  static String routePath = '/grocceyList';
+  static String routeName = 'GroceryList';
+  static String routePath = '/groceryList';
 
   @override
-  State<GrocceyListWidget> createState() => _GrocceyListWidgetState();
+  State<GroceryListWidget> createState() => _GroceryListWidgetState();
 }
 
-class _GrocceyListWidgetState extends State<GrocceyListWidget> {
-  late GrocceyListModel _model;
+class _GroceryListWidgetState extends State<GroceryListWidget> {
+  late GroceryListModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => GrocceyListModel());
+    _model = createModel(context, () => GroceryListModel());
 
-    logFirebaseEvent('screen_view', parameters: {'screen_name': 'grocceyList'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'GroceryList'});
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -53,7 +53,7 @@ class _GrocceyListWidgetState extends State<GrocceyListWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'Grocey List',
+            'Grocery List',
             style: FlutterFlowTheme.of(context).titleLarge.override(
                   fontFamily: 'Inter',
                   color: FlutterFlowTheme.of(context).primaryText,
@@ -75,7 +75,7 @@ class _GrocceyListWidgetState extends State<GrocceyListWidget> {
                   ),
                   onPressed: () async {
                     logFirebaseEvent(
-                        'GROCCEY_LIST_add_circle_outline_ICN_ON_T');
+                        'GROCERY_LIST_add_circle_outline_ICN_ON_T');
                     logFirebaseEvent('IconButton_bottom_sheet');
                     await showModalBottomSheet(
                       isScrollControlled: true,
@@ -267,7 +267,7 @@ class _GrocceyListWidgetState extends State<GrocceyListWidget> {
                                             ),
                                             onPressed: () async {
                                               logFirebaseEvent(
-                                                  'GROCCEY_LIST_delete_outline_ICN_ON_TAP');
+                                                  'GROCERY_LIST_delete_outline_ICN_ON_TAP');
                                               logFirebaseEvent(
                                                   'IconButton_backend_call');
                                               await listViewGroceryListRecord
