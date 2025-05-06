@@ -12,12 +12,19 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'index.dart';
 
+import '/flutter_flow/admob_util.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
 
+  final environmentValues = FFDevEnvironmentValues();
+  await environmentValues.initialize();
+
   await initFirebase();
+
+  adMobUpdateRequestConfiguration();
 
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
@@ -150,9 +157,9 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'meals': MealsWidget(),
-      'GroceryList': GroceryListWidget(),
-      'AIMealPage': AIMealPageWidget(),
       'Profile': ProfileWidget(),
+      'AIMealPage': AIMealPageWidget(),
+      'GroceryList': GroceryListWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -181,10 +188,9 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.list,
-              size: 24.0,
+              Icons.person,
             ),
-            label: 'Groccey List',
+            label: 'Profile',
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -196,9 +202,10 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person,
+              Icons.list,
+              size: 24.0,
             ),
-            label: 'Profile',
+            label: 'Groccey List',
             tooltip: '',
           )
         ],

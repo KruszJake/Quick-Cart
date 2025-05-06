@@ -45,6 +45,16 @@ class MealsRecord extends FirestoreRecord {
   String get ingredients => _ingredients ?? '';
   bool hasIngredients() => _ingredients != null;
 
+  // "Item" field.
+  String? _item;
+  String get item => _item ?? '';
+  bool hasItem() => _item != null;
+
+  // "ItemAmount" field.
+  int? _itemAmount;
+  int get itemAmount => _itemAmount ?? 0;
+  bool hasItemAmount() => _itemAmount != null;
+
   void _initializeFields() {
     _mealName = snapshotData['mealName'] as String?;
     _calories = castToType<int>(snapshotData['calories']);
@@ -52,6 +62,8 @@ class MealsRecord extends FirestoreRecord {
     _createTime = snapshotData['createTime'] as DateTime?;
     _userId = snapshotData['userId'] as String?;
     _ingredients = snapshotData['ingredients'] as String?;
+    _item = snapshotData['Item'] as String?;
+    _itemAmount = castToType<int>(snapshotData['ItemAmount']);
   }
 
   static CollectionReference get collection =>
@@ -94,6 +106,8 @@ Map<String, dynamic> createMealsRecordData({
   DateTime? createTime,
   String? userId,
   String? ingredients,
+  String? item,
+  int? itemAmount,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -103,6 +117,8 @@ Map<String, dynamic> createMealsRecordData({
       'createTime': createTime,
       'userId': userId,
       'ingredients': ingredients,
+      'Item': item,
+      'ItemAmount': itemAmount,
     }.withoutNulls,
   );
 
@@ -119,7 +135,9 @@ class MealsRecordDocumentEquality implements Equality<MealsRecord> {
         e1?.mealType == e2?.mealType &&
         e1?.createTime == e2?.createTime &&
         e1?.userId == e2?.userId &&
-        e1?.ingredients == e2?.ingredients;
+        e1?.ingredients == e2?.ingredients &&
+        e1?.item == e2?.item &&
+        e1?.itemAmount == e2?.itemAmount;
   }
 
   @override
@@ -129,7 +147,9 @@ class MealsRecordDocumentEquality implements Equality<MealsRecord> {
         e?.mealType,
         e?.createTime,
         e?.userId,
-        e?.ingredients
+        e?.ingredients,
+        e?.item,
+        e?.itemAmount
       ]);
 
   @override

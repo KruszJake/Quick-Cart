@@ -20,9 +20,9 @@ class FFAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  String _searchQuery = '\" \" ';
-  String get searchQuery => _searchQuery;
-  set searchQuery(String value) {
-    _searchQuery = value;
+  bool _searchactive = false;
+  bool get searchactive => _searchactive;
+  set searchactive(bool value) {
+    _searchactive = value;
   }
 }

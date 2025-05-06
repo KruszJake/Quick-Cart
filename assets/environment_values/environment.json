@@ -1,0 +1,4 @@
+{
+  "currentEnv": "Production",
+"stripeAPI": "http://stripe.com/api/real"
+}

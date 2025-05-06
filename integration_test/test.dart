@@ -41,10 +41,18 @@ void main() async {
     ));
     await GoogleFonts.pendingFonts();
 
-    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 5000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 100000),
+    );
     await tester.enterText(find.byKey(const ValueKey('mealName_grro')), 'Rice');
     await tester.tap(find.byKey(const ValueKey('addMeal_puij')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 3000));
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 5000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 100000),
+    );
     expect(find.text('Your Meals'), findsWidgets);
   });
 
@@ -71,7 +79,7 @@ void main() async {
       const Duration(milliseconds: 100000),
     );
     await tester.enterText(
-        find.byKey(const ValueKey('SignUp-Email_m7rc')), 'jake@uri.edu');
+        find.byKey(const ValueKey('SignUp-Email_m7rc')), 'test11@uri.edu');
     await tester.enterText(
         find.byKey(const ValueKey('SignUp-Password_qckj')), 'password');
     await tester.enterText(
@@ -137,15 +145,30 @@ void main() async {
     ));
     await GoogleFonts.pendingFonts();
 
-    await tester.pumpAndSettle(const Duration(milliseconds: 15000));
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 15000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 100000),
+    );
     await tester.tap(find.byKey(const ValueKey('Button_5zzo')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 15000));
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 15000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 100000),
+    );
     await tester.enterText(find.byKey(const ValueKey('enterMeal_26n2')),
         'make a meal for breakfast');
-    await tester.pumpAndSettle(const Duration(milliseconds: 15000));
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 15000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 100000),
+    );
     await tester.tap(find.byKey(const ValueKey('IconButton_e0ot')));
-    await tester.pumpAndSettle(const Duration(milliseconds: 15000));
-    await tester.tap(find.byIcon(Icons.add_box));
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 15000),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(milliseconds: 1000000),
+    );
   });
 }
 

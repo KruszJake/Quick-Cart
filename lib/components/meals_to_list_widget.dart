@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'meals_to_list_model.dart';
 export 'meals_to_list_model.dart';
 
@@ -55,8 +56,17 @@ class _MealsToListWidgetState extends State<MealsToListWidget> {
               child: Text(
                 'Select the meal',
                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Inter',
+                      font: GoogleFonts.inter(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                      ),
                       letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleSmall.fontStyle,
                     ),
               ),
             ),
@@ -104,8 +114,21 @@ class _MealsToListWidgetState extends State<MealsToListWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleLarge
                                   .override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
                                   ),
                             ),
                             subtitle: Text(
@@ -113,8 +136,21 @@ class _MealsToListWidgetState extends State<MealsToListWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
                                   ),
                             ),
                             tileColor: FlutterFlowTheme.of(context)
@@ -143,18 +179,16 @@ class _MealsToListWidgetState extends State<MealsToListWidget> {
                                   FlutterFlowTheme.of(context).alternate,
                             ),
                             child: Checkbox(
-                              value: _model
-                                      .checkboxValueMap[listViewMealsRecord] ??=
-                                  false,
+                              value: _model.checkboxValueMap1[
+                                  listViewMealsRecord] ??= false,
                               onChanged: (newValue) async {
-                                safeSetState(() => _model
-                                        .checkboxValueMap[listViewMealsRecord] =
-                                    newValue!);
+                                safeSetState(() => _model.checkboxValueMap1[
+                                    listViewMealsRecord] = newValue!);
                                 if (newValue!) {
                                   logFirebaseEvent(
                                       'MEALS_TO_LIST_Checkbox_lndce7ty_ON_TOGGL');
-                                  if (_model
-                                      .checkboxValueMap[listViewMealsRecord]!) {
+                                  if (_model.checkboxValueMap1[
+                                      listViewMealsRecord]!) {
                                     logFirebaseEvent('Checkbox_backend_call');
 
                                     await GroceryListRecord.collection
@@ -166,6 +200,154 @@ class _MealsToListWidgetState extends State<MealsToListWidget> {
                                               listViewMealsRecord.mealName,
                                           ingredients:
                                               listViewMealsRecord.ingredients,
+                                        ));
+                                  }
+                                }
+                              },
+                              side: BorderSide(
+                                width: 2,
+                                color: FlutterFlowTheme.of(context).alternate,
+                              ),
+                              activeColor: FlutterFlowTheme.of(context).primary,
+                              checkColor: FlutterFlowTheme.of(context).info,
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+            ),
+            StreamBuilder<List<MealsRecord>>(
+              stream: queryMealsRecord(
+                queryBuilder: (mealsRecord) => mealsRecord.where(
+                  'userId',
+                  isEqualTo: currentUserUid,
+                ),
+              ),
+              builder: (context, snapshot) {
+                // Customize what your widget looks like when it's loading.
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: SizedBox(
+                      width: 50.0,
+                      height: 50.0,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          FlutterFlowTheme.of(context).primary,
+                        ),
+                      ),
+                    ),
+                  );
+                }
+                List<MealsRecord> listViewMealsRecordList = snapshot.data!;
+
+                return ListView.separated(
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  itemCount: listViewMealsRecordList.length,
+                  separatorBuilder: (_, __) => SizedBox(height: 16.0),
+                  itemBuilder: (context, listViewIndex) {
+                    final listViewMealsRecord =
+                        listViewMealsRecordList[listViewIndex];
+                    return Stack(
+                      alignment: AlignmentDirectional(1.0, -0.8),
+                      children: [
+                        Material(
+                          color: Colors.transparent,
+                          child: ListTile(
+                            title: Text(
+                              listViewMealsRecord.item,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleLarge
+                                  .override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
+                                  ),
+                            ),
+                            subtitle: Text(
+                              listViewMealsRecord.itemAmount.toString(),
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
+                            ),
+                            tileColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            dense: false,
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 12.0, 0.0),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(0.75, -0.8),
+                          child: Theme(
+                            data: ThemeData(
+                              checkboxTheme: CheckboxThemeData(
+                                visualDensity: VisualDensity.compact,
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                              ),
+                              unselectedWidgetColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                            ),
+                            child: Checkbox(
+                              value: _model.checkboxValueMap2[
+                                  listViewMealsRecord] ??= false,
+                              onChanged: (newValue) async {
+                                safeSetState(() => _model.checkboxValueMap2[
+                                    listViewMealsRecord] = newValue!);
+                                if (newValue!) {
+                                  logFirebaseEvent(
+                                      'MEALS_TO_LIST_Checkbox_0zxgqjs6_ON_TOGGL');
+                                  if (_model.checkboxValueMap2[
+                                      listViewMealsRecord]!) {
+                                    logFirebaseEvent('Checkbox_backend_call');
+
+                                    await GroceryListRecord.collection
+                                        .doc()
+                                        .set(createGroceryListRecordData(
+                                          userId: currentUserUid,
+                                          createTime: getCurrentTimestamp,
+                                          item: listViewMealsRecord.item,
+                                          itemAmount:
+                                              listViewMealsRecord.itemAmount,
                                         ));
                                   }
                                 }
@@ -198,9 +380,18 @@ class _MealsToListWidgetState extends State<MealsToListWidget> {
                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Inter',
+                      font: GoogleFonts.inter(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                      ),
                       color: FlutterFlowTheme.of(context).primaryText,
                       letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleSmall.fontStyle,
                     ),
                 elevation: 0.0,
                 borderSide: BorderSide(

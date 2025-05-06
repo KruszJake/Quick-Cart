@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'meals_widget.dart' show MealsWidget;
 import 'package:flutter/material.dart';
 
@@ -57,9 +58,12 @@ class MealsModel extends FlutterFlowModel<MealsWidget> {
   TextEditingController? ingredientsTextController;
   String? Function(BuildContext, String?)? ingredientsTextControllerValidator;
   // State field(s) for Search widget.
+  final searchKey = GlobalKey();
   FocusNode? searchFocusNode;
   TextEditingController? searchTextController;
+  String? searchSelectedOption;
   String? Function(BuildContext, String?)? searchTextControllerValidator;
+  List<MealsRecord> simpleSearchResults = [];
 
   @override
   void initState(BuildContext context) {
@@ -79,6 +83,5 @@ class MealsModel extends FlutterFlowModel<MealsWidget> {
     ingredientsTextController?.dispose();
 
     searchFocusNode?.dispose();
-    searchTextController?.dispose();
   }
 }

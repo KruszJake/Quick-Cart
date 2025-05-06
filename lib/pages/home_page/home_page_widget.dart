@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -82,9 +83,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                          fontFamily: 'Inter',
+                          font: GoogleFonts.inter(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .fontStyle,
+                          ),
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .labelLarge
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).labelLarge.fontStyle,
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(
@@ -111,9 +124,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                          fontFamily: 'Inter',
+                          font: GoogleFonts.inter(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .fontStyle,
+                          ),
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .labelLarge
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).labelLarge.fontStyle,
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(

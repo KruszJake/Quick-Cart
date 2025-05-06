@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'survey_question2_model.dart';
 export 'survey_question2_model.dart';
 
@@ -61,8 +62,16 @@ class _SurveyQuestion2WidgetState extends State<SurveyQuestion2Widget> {
           Text(
             'Do you have any feedback',
             style: FlutterFlowTheme.of(context).titleSmall.override(
-                  fontFamily: 'Inter',
+                  font: GoogleFonts.inter(
+                    fontWeight:
+                        FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                  ),
                   letterSpacing: 0.0,
+                  fontWeight:
+                      FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                 ),
           ),
           Container(
@@ -86,13 +95,31 @@ class _SurveyQuestion2WidgetState extends State<SurveyQuestion2Widget> {
               decoration: InputDecoration(
                 isDense: true,
                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Inter',
+                      font: GoogleFonts.inter(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                      ),
                       letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).labelMedium.fontStyle,
                     ),
                 hintText: 'We’d love to hear your thoughts!',
                 hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
-                      fontFamily: 'Inter',
+                      font: GoogleFonts.inter(
+                        fontWeight:
+                            FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                      ),
                       letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodySmall.fontStyle,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -126,8 +153,17 @@ class _SurveyQuestion2WidgetState extends State<SurveyQuestion2Widget> {
                 fillColor: FlutterFlowTheme.of(context).secondary,
               ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Inter',
+                    font: GoogleFonts.inter(
+                      fontWeight:
+                          FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                    ),
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                   ),
               maxLines: 4,
               cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -154,9 +190,18 @@ class _SurveyQuestion2WidgetState extends State<SurveyQuestion2Widget> {
               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
               color: FlutterFlowTheme.of(context).primary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    fontFamily: 'Inter',
+                    font: GoogleFonts.inter(
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                    ),
                     color: FlutterFlowTheme.of(context).primaryText,
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleSmall.fontStyle,
                   ),
               elevation: 0.0,
               borderRadius: BorderRadius.circular(24.0),

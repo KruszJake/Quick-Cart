@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'survey_question1_model.dart';
 export 'survey_question1_model.dart';
 
@@ -58,8 +59,16 @@ class _SurveyQuestion1WidgetState extends State<SurveyQuestion1Widget> {
           Text(
             'Rate the app',
             style: FlutterFlowTheme.of(context).titleSmall.override(
-                  fontFamily: 'Inter',
+                  font: GoogleFonts.inter(
+                    fontWeight:
+                        FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                  ),
                   letterSpacing: 0.0,
+                  fontWeight:
+                      FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                 ),
           ),
           Wrap(
@@ -135,9 +144,18 @@ class _SurveyQuestion1WidgetState extends State<SurveyQuestion1Widget> {
               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
               color: FlutterFlowTheme.of(context).primary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    fontFamily: 'Inter',
+                    font: GoogleFonts.inter(
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                    ),
                     color: FlutterFlowTheme.of(context).primaryText,
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleSmall.fontStyle,
                   ),
               elevation: 0.0,
               borderRadius: BorderRadius.circular(24.0),

@@ -9,6 +9,8 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
 
@@ -68,9 +70,15 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           title: Text(
             'Edit Profile',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                  fontFamily: 'Inter',
+                  font: GoogleFonts.inter(
+                    fontWeight: FontWeight.bold,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineSmall.fontStyle,
+                  ),
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
+                  fontStyle:
+                      FlutterFlowTheme.of(context).headlineSmall.fontStyle,
                 ),
           ),
           actions: [],
@@ -224,9 +232,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                           ),
                           Container(
@@ -242,10 +258,23 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -282,12 +311,36 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                               cursorColor: FlutterFlowTheme.of(context).primary,
                               validator: _model.fullNameTextControllerValidator
                                   .asValidator(context),
+                              inputFormatters: [
+                                if (!isAndroid && !isiOS)
+                                  TextInputFormatter.withFunction(
+                                      (oldValue, newValue) {
+                                    return TextEditingValue(
+                                      selection: newValue.selection,
+                                      text: newValue.text.toCapitalization(
+                                          TextCapitalization.words),
+                                    );
+                                  }),
+                              ],
                             ),
                           ),
                         ].divide(SizedBox(height: 8.0)),
@@ -301,9 +354,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                           ),
                           FlutterFlowDropDown<String>(
@@ -322,8 +383,21 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                             hintText: 'Select gender',
                             icon: Icon(
@@ -354,9 +428,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                           ),
                           Container(
@@ -372,10 +454,23 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -412,8 +507,21 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                               maxLines: 5,
                               minLines: 3,
@@ -421,6 +529,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               cursorColor: FlutterFlowTheme.of(context).primary,
                               validator: _model.textController2Validator
                                   .asValidator(context),
+                              inputFormatters: [
+                                if (!isAndroid && !isiOS)
+                                  TextInputFormatter.withFunction(
+                                      (oldValue, newValue) {
+                                    return TextEditingValue(
+                                      selection: newValue.selection,
+                                      text: newValue.text.toCapitalization(
+                                          TextCapitalization.sentences),
+                                    );
+                                  }),
+                              ],
                             ),
                           ),
                         ].divide(SizedBox(height: 8.0)),
@@ -434,9 +553,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                           ),
                           Container(
@@ -452,10 +579,23 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -498,12 +638,36 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                               cursorColor: FlutterFlowTheme.of(context).primary,
                               validator: _model.textController3Validator
                                   .asValidator(context),
+                              inputFormatters: [
+                                if (!isAndroid && !isiOS)
+                                  TextInputFormatter.withFunction(
+                                      (oldValue, newValue) {
+                                    return TextEditingValue(
+                                      selection: newValue.selection,
+                                      text: newValue.text.toCapitalization(
+                                          TextCapitalization.words),
+                                    );
+                                  }),
+                              ],
                             ),
                           ),
                         ].divide(SizedBox(height: 8.0)),
@@ -537,11 +701,19 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
-                                fontFamily: 'Inter',
+                                font: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w600,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
                               ),
                           elevation: 0.0,
                           borderSide: BorderSide(
@@ -570,9 +742,22 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
-                                fontFamily: 'Inter',
+                                font: GoogleFonts.inter(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
                               ),
                           elevation: 0.0,
                           borderSide: BorderSide(

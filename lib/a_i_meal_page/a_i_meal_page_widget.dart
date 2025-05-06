@@ -1,11 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/ai_agents/ai_agent.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'a_i_meal_page_model.dart';
 export 'a_i_meal_page_model.dart';
 
@@ -61,6 +64,12 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              FlutterFlowAdBanner(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: 50.0,
+                showsTestAd: false,
+                androidAdUnitID: 'ca-app-pub-9852972049371172/3138242147',
+              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                 child: Column(
@@ -74,9 +83,17 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                         'Generate a Meal',
                         style:
                             FlutterFlowTheme.of(context).headlineLarge.override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontStyle,
                                 ),
                       ),
                     ),
@@ -109,9 +126,17 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
                                     ),
                               ),
                               TextFormField(
@@ -128,8 +153,23 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Inter',
+                                        font: GoogleFonts.inter(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
                                       ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -166,8 +206,21 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Inter',
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
                                       letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
                                     ),
                                 maxLines: null,
                                 minLines: 1,
@@ -176,6 +229,17 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                 validator: _model
                                     .enterMealTextControllerValidator
                                     .asValidator(context),
+                                inputFormatters: [
+                                  if (!isAndroid && !isiOS)
+                                    TextInputFormatter.withFunction(
+                                        (oldValue, newValue) {
+                                      return TextEditingValue(
+                                        selection: newValue.selection,
+                                        text: newValue.text.toCapitalization(
+                                            TextCapitalization.sentences),
+                                      );
+                                    }),
+                                ],
                               ),
                               FFButtonWidget(
                                 key: ValueKey('Button_5zzo'),
@@ -232,11 +296,30 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
                                               .override(
-                                                fontFamily: 'Inter',
+                                                font: GoogleFonts.inter(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontStyle,
                                               ),
                                         ),
                                         duration: Duration(milliseconds: 4000),
@@ -263,11 +346,20 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Inter',
+                                        font: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
                                       ),
                                   elevation: 0.0,
                                   borderSide: BorderSide(
@@ -299,9 +391,15 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                 child: Text(
                   'Generated Meal:',
                   style: FlutterFlowTheme.of(context).titleLarge.override(
-                        fontFamily: 'Inter',
+                        font: GoogleFonts.inter(
+                          fontWeight: FontWeight.w600,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                        ),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleLarge.fontStyle,
                       ),
                 ),
               ),
@@ -356,9 +454,21 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleMedium
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -382,12 +492,25 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                                       context)
                                                   .bodySmall
                                                   .override(
-                                                    fontFamily: 'Inter',
+                                                    font: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmall
+                                                              .fontStyle,
+                                                    ),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmall
+                                                            .fontStyle,
                                                   ),
                                             ),
                                           ),
@@ -405,11 +528,28 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -424,8 +564,25 @@ class _AIMealPageWidgetState extends State<AIMealPageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),

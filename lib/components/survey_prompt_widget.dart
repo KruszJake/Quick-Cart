@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'survey_prompt_model.dart';
 export 'survey_prompt_model.dart';
 
@@ -56,8 +57,16 @@ class _SurveyPromptWidgetState extends State<SurveyPromptWidget> {
           Text(
             'Would you like to take a quick suvery',
             style: FlutterFlowTheme.of(context).titleSmall.override(
-                  fontFamily: 'Inter',
+                  font: GoogleFonts.inter(
+                    fontWeight:
+                        FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                  ),
                   letterSpacing: 0.0,
+                  fontWeight:
+                      FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                  fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                 ),
           ),
           FFButtonWidget(
@@ -90,9 +99,18 @@ class _SurveyPromptWidgetState extends State<SurveyPromptWidget> {
               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
               color: FlutterFlowTheme.of(context).primary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    fontFamily: 'Inter',
+                    font: GoogleFonts.inter(
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                    ),
                     color: FlutterFlowTheme.of(context).primaryText,
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleSmall.fontStyle,
                   ),
               elevation: 0.0,
               borderRadius: BorderRadius.circular(24.0),
@@ -112,9 +130,18 @@ class _SurveyPromptWidgetState extends State<SurveyPromptWidget> {
               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
               color: FlutterFlowTheme.of(context).primary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                    fontFamily: 'Inter',
+                    font: GoogleFonts.inter(
+                      fontWeight:
+                          FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                    ),
                     color: FlutterFlowTheme.of(context).primaryText,
                     letterSpacing: 0.0,
+                    fontWeight:
+                        FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleSmall.fontStyle,
                   ),
               elevation: 0.0,
               borderRadius: BorderRadius.circular(24.0),

@@ -35,11 +35,23 @@ class GroceryListRecord extends FirestoreRecord {
   String get ingredients => _ingredients ?? '';
   bool hasIngredients() => _ingredients != null;
 
+  // "Item" field.
+  String? _item;
+  String get item => _item ?? '';
+  bool hasItem() => _item != null;
+
+  // "ItemAmount" field.
+  int? _itemAmount;
+  int get itemAmount => _itemAmount ?? 0;
+  bool hasItemAmount() => _itemAmount != null;
+
   void _initializeFields() {
     _userId = snapshotData['userId'] as String?;
     _createTime = snapshotData['createTime'] as DateTime?;
     _mealName = snapshotData['mealName'] as String?;
     _ingredients = snapshotData['ingredients'] as String?;
+    _item = snapshotData['Item'] as String?;
+    _itemAmount = castToType<int>(snapshotData['ItemAmount']);
   }
 
   static CollectionReference get collection =>
@@ -81,6 +93,8 @@ Map<String, dynamic> createGroceryListRecordData({
   DateTime? createTime,
   String? mealName,
   String? ingredients,
+  String? item,
+  int? itemAmount,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -88,6 +102,8 @@ Map<String, dynamic> createGroceryListRecordData({
       'createTime': createTime,
       'mealName': mealName,
       'ingredients': ingredients,
+      'Item': item,
+      'ItemAmount': itemAmount,
     }.withoutNulls,
   );
 
@@ -102,12 +118,20 @@ class GroceryListRecordDocumentEquality implements Equality<GroceryListRecord> {
     return e1?.userId == e2?.userId &&
         e1?.createTime == e2?.createTime &&
         e1?.mealName == e2?.mealName &&
-        e1?.ingredients == e2?.ingredients;
+        e1?.ingredients == e2?.ingredients &&
+        e1?.item == e2?.item &&
+        e1?.itemAmount == e2?.itemAmount;
   }
 
   @override
-  int hash(GroceryListRecord? e) => const ListEquality()
-      .hash([e?.userId, e?.createTime, e?.mealName, e?.ingredients]);
+  int hash(GroceryListRecord? e) => const ListEquality().hash([
+        e?.userId,
+        e?.createTime,
+        e?.mealName,
+        e?.ingredients,
+        e?.item,
+        e?.itemAmount
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is GroceryListRecord;

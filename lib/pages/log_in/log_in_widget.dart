@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'log_in_model.dart';
 export 'log_in_model.dart';
 
@@ -35,6 +36,7 @@ class _LogInWidgetState extends State<LogInWidget>
       length: 1,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     _model.logInEmailTextController ??= TextEditingController();
     _model.logInEmailFocusNode ??= FocusNode();
 
@@ -120,14 +122,40 @@ class _LogInWidgetState extends State<LogInWidget>
                             labelStyle: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontStyle,
                                 ),
                             unselectedLabelStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .fontStyle,
                                 ),
                             indicatorColor: Color(0x009EDF5C),
                             tabs: [
@@ -168,21 +196,55 @@ class _LogInWidgetState extends State<LogInWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                         hintText: 'Email....',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -247,8 +309,25 @@ class _LogInWidgetState extends State<LogInWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                       keyboardType: TextInputType.emailAddress,
                                       cursorColor: FlutterFlowTheme.of(context)
@@ -274,21 +353,55 @@ class _LogInWidgetState extends State<LogInWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
                                             ),
                                         hintText: 'Password....',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -351,8 +464,25 @@ class _LogInWidgetState extends State<LogInWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                       cursorColor: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -413,8 +543,25 @@ class _LogInWidgetState extends State<LogInWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -477,11 +624,28 @@ class _LogInWidgetState extends State<LogInWidget>
                                         textStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .fontStyle,
                                             ),
                                         elevation: 0.0,
                                         borderSide: BorderSide(

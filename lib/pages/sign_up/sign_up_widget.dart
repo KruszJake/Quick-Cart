@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'sign_up_model.dart';
 export 'sign_up_model.dart';
 
@@ -36,6 +37,7 @@ class _SignUpWidgetState extends State<SignUpWidget>
       length: 1,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     _model.signUpEmailTextController ??= TextEditingController();
     _model.signUpEmailFocusNode ??= FocusNode();
 
@@ -113,13 +115,39 @@ class _SignUpWidgetState extends State<SignUpWidget>
                           labelStyle: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                fontFamily: 'Inter',
+                                font: GoogleFonts.inter(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontStyle,
+                                ),
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .fontStyle,
                               ),
                           unselectedLabelStyle:
                               FlutterFlowTheme.of(context).titleMedium.override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .fontStyle,
                                   ),
                           indicatorColor: Color(0x009EDF5C),
                           tabs: [
@@ -166,22 +194,60 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                   context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Inter',
+                                                font: GoogleFonts.inter(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
                                               ),
                                           hintText: 'Email....',
                                           hintStyle: FlutterFlowTheme.of(
                                                   context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Inter',
+                                                font: GoogleFonts.inter(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
                                               ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -252,8 +318,25 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                         keyboardType:
                                             TextInputType.emailAddress,
@@ -283,22 +366,60 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                   context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Inter',
+                                                font: GoogleFonts.inter(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
                                               ),
                                           hintText: 'Password....',
                                           hintStyle: FlutterFlowTheme.of(
                                                   context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Inter',
+                                                font: GoogleFonts.inter(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
                                               ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -369,8 +490,25 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
@@ -399,22 +537,60 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                                   context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Inter',
+                                                font: GoogleFonts.inter(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
                                               ),
                                           hintText: 'Confirm Password....',
                                           hintStyle: FlutterFlowTheme.of(
                                                   context)
                                               .labelLarge
                                               .override(
-                                                fontFamily: 'Inter',
+                                                font: GoogleFonts.inter(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
                                               ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -485,8 +661,25 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Inter',
+                                              font: GoogleFonts.inter(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                         cursorColor:
                                             FlutterFlowTheme.of(context)
@@ -494,65 +687,6 @@ class _SignUpWidgetState extends State<SignUpWidget>
                                         validator: _model
                                             .signUpConfirmPasswordTextControllerValidator
                                             .asValidator(context),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          logFirebaseEvent(
-                                              'SIGN_UP_PAGE_Text_s6fvn3yd_ON_TAP');
-                                          logFirebaseEvent('Text_auth');
-                                          if (_model.signUpEmailTextController
-                                              .text.isEmpty) {
-                                            ScaffoldMessenger.of(context)
-                                                .showSnackBar(
-                                              SnackBar(
-                                                content: Text(
-                                                  'Email required!',
-                                                ),
-                                              ),
-                                            );
-                                            return;
-                                          }
-                                          await authManager.resetPassword(
-                                            email: _model
-                                                .signUpEmailTextController.text,
-                                            context: context,
-                                          );
-                                          logFirebaseEvent('Text_alert_dialog');
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                content: Text(
-                                                    'A reset link has been sent to your email. Please check your inbox.'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          );
-                                        },
-                                        child: Text(
-                                          'Forgot Password?',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
                                       ),
                                     ),
                                   ].divide(SizedBox(height: 12.0)),
@@ -625,9 +759,21 @@ class _SignUpWidgetState extends State<SignUpWidget>
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
-                          fontFamily: 'Inter',
+                          font: GoogleFonts.inter(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .fontStyle,
+                          ),
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .labelLarge
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).labelLarge.fontStyle,
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(
